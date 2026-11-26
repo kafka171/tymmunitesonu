@@ -3,8 +3,8 @@ compatibility_date = "2026-11-01"
 pages_build_output_dir = "public"
 
 # Cloudflare D1 = SQLite (sunucusuz). Tum yanit sutunlari TEXT.
-# `wrangler d1 create tymmunitesonu` ciktisindaki database_id degerini buraya yazin.
+# `wrangler d1 create tymunitsonu` ciktisindaki database_id degerini buraya yazin.
 [[d1_databases]]
 binding = "DB"
-database_name = "tymmunitesonu"
+database_name = "tymunitsonu"
 database_id = "dd32459f-1c4a-4ace-a267-690f68b61eb2"

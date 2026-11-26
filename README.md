@@ -60,7 +60,7 @@ npm run schema        # schema.sql + schema.console.sql yeniden üretilir
 
    ```bash
    npx wrangler login
-   npx wrangler d1 create tymmunitesonu
+   npx wrangler d1 create tymunitsonu
    ```
 
    Çıktıdaki `database_id` değerini `wrangler.toml` (ve `wrangler.worker.toml`) içine yazın.

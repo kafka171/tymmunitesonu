@@ -12,5 +12,5 @@ html_handling = "none"
 # Pages ile ayni D1 veritabani. `wrangler d1 create` ciktisindaki id'yi yazin.
 [[d1_databases]]
 binding = "DB"
-database_name = "tymmunitesonu"
+database_name = "tymunitsonu"
 database_id = "dd32459f-1c4a-4ace-a267-690f68b61eb2"
