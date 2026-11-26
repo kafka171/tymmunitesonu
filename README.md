@@ -45,7 +45,7 @@ npm run db:init:local      # yerel SQLite tablosu
 npm run dev                # http://localhost:8787
 ```
 
-Yönetici anahtarı `.dev.vars` içindedir (`tymunitsonu-yerel-anahtar`).
+Yönetici anahtarı `.dev.vars` içindedir (`tymmunitesonu-yerel-anahtar`).
 
 Formu Google Forms'tan yeniden içe aktarmak için:
 
@@ -60,7 +60,7 @@ npm run schema        # schema.sql + schema.console.sql yeniden üretilir
 
    ```bash
    npx wrangler login
-   npx wrangler d1 create tymunitsonu
+   npx wrangler d1 create tymmunitesonu
    ```
 
    Çıktıdaki `database_id` değerini `wrangler.toml` (ve `wrangler.worker.toml`) içine yazın.
@@ -77,13 +77,13 @@ npm run schema        # schema.sql + schema.console.sql yeniden üretilir
 3. **Yönetici anahtarı**
 
    ```bash
-   npx wrangler pages secret put ADMIN_KEY --project-name tymunitsonu
+   npx wrangler pages secret put ADMIN_KEY --project-name tymmunitesonu
    ```
 
 4. **Yayınlayın**
 
    ```bash
-   npx wrangler pages project create tymunitsonu
+   npx wrangler pages project create tymmunitesonu
    npm run deploy
    ```
 

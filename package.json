@@ -12,10 +12,10 @@
     "worker:secret": "wrangler secret put ADMIN_KEY --config wrangler.worker.toml",
     "schema": "node scripts/gen-schema.mjs",
     "import-form": "node scripts/import-google-form.mjs",
-    "db:init:local": "wrangler d1 execute tymunitsonu --local --file=./schema.sql",
-    "db:drop:local": "wrangler d1 execute tymunitsonu --local --command \"DROP TABLE IF EXISTS responses\"",
-    "db:init": "wrangler d1 execute tymunitsonu --remote --file=./schema.sql",
-    "db:export": "wrangler d1 export tymunitsonu --remote --output=./tymunitsonu.sql",
+    "db:init:local": "wrangler d1 execute tymmunitesonu --local --file=./schema.sql",
+    "db:drop:local": "wrangler d1 execute tymmunitesonu --local --command \"DROP TABLE IF EXISTS responses\"",
+    "db:init": "wrangler d1 execute tymmunitesonu --remote --file=./schema.sql",
+    "db:export": "wrangler d1 export tymmunitesonu --remote --output=./tymmunitesonu.sql",
     "check": "node --check functions/api/submit.js && node --check functions/api/form.js && node --check public/app.js && node --check public/admin.js && node --check worker/index.js"
   },
   "devDependencies": {
