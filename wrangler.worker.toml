@@ -1,0 +1,16 @@
+# Cloudflare Worker surumu (workers.dev icin).
+# Pages dosyasi olan wrangler.toml'a dokunmaz.
+name = "tymunitsonu"
+main = "worker/index.js"
+compatibility_date = "2026-11-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+html_handling = "none"
+
+# Pages ile ayni D1 veritabani. `wrangler d1 create` ciktisindaki id'yi yazin.
+[[d1_databases]]
+binding = "DB"
+database_name = "tymunitsonu"
+database_id = "00000000-0000-0000-0000-000000000000"

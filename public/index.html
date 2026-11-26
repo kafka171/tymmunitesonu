@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Türkiye Yüzyılı Maarif Modeli Ünite/Tema Sonu Görüşme Formu</title>
+    <meta
+      name="description"
+      content="TYMM Öğretim Programları İzleme ve Değerlendirme Çalışmaları kapsamında Din Kültürü ve Ahlak Bilgisi dersi ünite/tema sonu görüşme formu"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">İçeriğe geç</a>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <span class="brand">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span class="brand-text">Öğretim Programı İzleme ve Değerlendirme</span>
+        </span>
+        <a class="admin-link" href="/admin">Yönetim</a>
+      </div>
+    </header>
+
+    <main id="main" class="page">
+      <section id="loading-view" class="card state-card">
+        <p class="state-text">Form yükleniyor…</p>
+      </section>
+
+      <section id="error-view" class="card state-card" hidden>
+        <h2>Form yüklenemedi</h2>
+        <p id="error-message" class="state-text"></p>
+        <button id="btn-retry" class="btn primary" type="button">Tekrar dene</button>
+      </section>
+
+      <section id="form-view" class="card" hidden aria-labelledby="form-title">
+        <div class="card-head">
+          <h1 id="form-title"></h1>
+          <div id="form-desc" class="form-desc"></div>
+          <p class="required-note"><span aria-hidden="true">*</span> Zorunlu soruyu belirtir</p>
+        </div>
+
+        <div class="progress-wrap">
+          <div
+            class="progress"
+            role="progressbar"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="0"
+            id="progress"
+          >
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <div class="progress-meta">
+            <span id="progress-text">Bölüm 1 / 1</span>
+            <span id="save-state" class="save-state" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <form id="form" novalidate>
+          <div id="section-host"></div>
+
+          <div class="nav">
+            <button id="btn-back" class="btn ghost" type="button">Geri</button>
+            <button id="btn-next" class="btn primary" type="submit">Sonraki</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="done-view" class="card state-card" hidden>
+        <div class="done-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+        </div>
+        <h2>Yanıtınız kaydedildi</h2>
+        <p class="state-text">
+          Katkınız için teşekkür ederiz. Yanıtınız güvenli biçimde kaydedildi.
+        </p>
+        <button id="btn-again" class="btn primary" type="button">Yeni yanıt doldur</button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Bu form, Türkiye Yüzyılı Maarif Modeli Öğretim Programları İzleme ve Değerlendirme
+        Çalışmaları kapsamında hazırlanmıştır.
+      </p>
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
