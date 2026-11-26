@@ -108,7 +108,6 @@ npx wrangler deploy --config wrangler.worker.toml
   CSV / Excel indirme (filtreler uygulanır)
 - **İstatistikler:** toplam/bugün/son 7 gün, farklı okul ve öğretmen sayıları; ders, ünite,
   okul dağılımları ve günlük yanıt grafiği
-- Giriş ekranındaki **Sunucu durumunu kontrol et** düğmesi `ADMIN_KEY` ve D1 durumunu gösterir
 
 ## Veritabanı
 

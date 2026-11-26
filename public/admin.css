@@ -27,21 +27,6 @@
   flex: 1;
 }
 
-.health-out {
-  margin: 12px 0 0;
-  padding: 12px 14px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--surface-2);
-  font-size: 13px;
-  line-height: 1.7;
-  white-space: pre-wrap;
-  color: var(--muted);
-  max-width: 420px;
-  text-align: left;
-  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-}
-
 .panel-head {
   display: flex;
   align-items: flex-end;

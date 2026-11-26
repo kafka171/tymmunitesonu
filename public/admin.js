@@ -7,8 +7,6 @@ const el = {
   loginForm: document.getElementById("login-form"),
   key: document.getElementById("admin-key"),
   loginError: document.getElementById("login-error"),
-  healthBtn: document.getElementById("btn-health"),
-  healthOut: document.getElementById("health-out"),
   panel: document.getElementById("panel-view"),
   panelSub: document.getElementById("panel-sub"),
   refresh: document.getElementById("btn-refresh"),
@@ -101,36 +99,6 @@ async function api(path, options = {}) {
     throw err;
   }
   return data;
-}
-
-async function checkHealth() {
-  el.healthBtn.disabled = true;
-  try {
-    const response = await fetch("/api/health", { headers: { accept: "application/json" } });
-    const h = await response.json();
-
-    const lines = [];
-    lines.push(
-      h.adminKeyConfigured
-        ? "ADMIN_KEY: tanımlı"
-        : "ADMIN_KEY: tanımlı DEĞİL (Production ortamına ekleyin)",
-    );
-    if (!h.dbBound) lines.push("D1: bağlı değil");
-    else if (h.tableExists) lines.push("D1 tablosu: hazır");
-    else if (h.dbOk) lines.push("D1 tablosu: YOK (schema.console.sql çalıştırın)");
-    else lines.push("D1: bağlantı hatası");
-    if (h.commit) lines.push(`Sürüm: ${h.commit}`);
-
-    el.healthOut.textContent = lines.join("\n");
-    el.healthOut.hidden = false;
-    return h;
-  } catch {
-    el.healthOut.textContent = "Sunucu durumu alınamadı.";
-    el.healthOut.hidden = false;
-    return null;
-  } finally {
-    el.healthBtn.disabled = false;
-  }
 }
 
 /* ---------- Yanitlar: filtre + sayfalama ---------- */
@@ -542,15 +510,9 @@ async function login(key) {
       show(el.login);
       el.loginError.textContent =
         status === 401
-          ? "Anahtar kabul edilmedi. Sunucu durumunu kontrol edin."
+          ? "Anahtar kabul edilmedi."
           : err.message || "Sunucu yapılandırma hatası.";
       el.loginError.hidden = false;
-
-      const health = await checkHealth();
-      if (status === 401 && health && health.adminKeyConfigured === false) {
-        el.loginError.textContent =
-          "Sunucuda ADMIN_KEY tanımlı değil. Cloudflare → Settings → Variables and Secrets (Production) ekleyip yeniden deploy edin.";
-      }
 
       el.key.focus();
       el.key.select();
@@ -642,8 +604,6 @@ el.retry.addEventListener("click", () => {
   if (state.key) login(state.key);
   else show(el.login);
 });
-
-el.healthBtn.addEventListener("click", checkHealth);
 
 el.closeDialog.addEventListener("click", closeDetail);
 el.closeDialog2.addEventListener("click", closeDetail);
