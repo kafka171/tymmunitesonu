@@ -1,6 +1,6 @@
 # Cloudflare Worker surumu (workers.dev icin).
 # Pages dosyasi olan wrangler.toml'a dokunmaz.
-name = "tymunitsonu"
+name = "tymmunitesonu"
 main = "worker/index.js"
 compatibility_date = "2026-11-01"
 
